@@ -1,11 +1,14 @@
 # CellWise 
-Originally created for the American Sickle Cell Anemia Association (ASCAA), CellWise is an essential app for understanding and managing sickle cell disease. Whether you're living with sickle cell or learning about it, CellWise provides valuable resources for education and support. 
+Created for the American Sickle Cell Anemia Association (ASCAA), CellWise is an essential app for understanding and managing sickle cell disease. Whether you're living with sickle cell or learning about it, CellWise provides valuable resources for education and support. 
 
 DISCLAIMER: All information provided is only for educational and informational purposes, specifically for sickle cell anemia. It is not a substitute for professional advice.
 
 Download for Android: https://play.google.com/store/apps/details?id=com.nnadozi.CellWise
 
 Download for iOS: https://apps.apple.com/us/app/cellwise-learn-sickle-cell/id6741455243
+
+## Built With
+React Native, Expo, JavaScript
 
  ## Pictures
 <img src="https://github.com/user-attachments/assets/be814d67-9e77-4780-bc2f-c3e8868c42f9" alt="1" width="200"/>
