@@ -7,6 +7,11 @@ Download for Android: https://play.google.com/store/apps/details?id=com.nnadozi.
 
 Download for iOS: https://apps.apple.com/us/app/cellwise-learn-sickle-cell/id6741455243
 
+## Features
+- Read educational modules
+- Dictionary with sickle cell related terms
+- Symptom tracker (able to be printed)
+
 ## Built With
 React Native, Expo, JavaScript
 
