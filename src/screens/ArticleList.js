@@ -17,7 +17,7 @@ const ArticleList = ({ route }) => {
           articleInfo.titles.map((title,index) =>
             <TouchableOpacity
              onPress={() => navigation.navigate("Article",{articleTitle:title})}
-             style = {{padding:"3%", alignSelf:"flex-start",borderTopWidth:1,width:"100%",borderColor:colors.lightGray}}>
+             style = {{padding:15, alignSelf:"flex-start",borderTopWidth:1,width:"100%",borderColor:colors.lightGray}}>
               <CustomText alignSelf={"flex-start"} color = {"gray"} fontFamily={"Rubik-Regular"}key={index}>
                 {title}
               </CustomText>
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     justifyContent:"center",
     alignItems:"center",
     position:"absolute",
-    top:"5%",
+    top:"0%",
     borderBottomWidth:1,
     borderBottomColor:colors.lightGray
   }

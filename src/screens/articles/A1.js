@@ -6,7 +6,7 @@ import { View } from 'react-native';
 const A1 = () => {
   return (
     <>
-      <CustomText marginTop="7%"marginBottom={"7%"} width="90%" fontFamily="Rubik-Regular" color="gray">
+      <CustomText fontSize={"small"} marginTop={30}marginBottom={30} width="90%" fontFamily="Rubik-Regular" color="gray">
         Sickle cell disease is a group of inherited red blood cell disorders that affect hemoglobin, the protein 
         that carries oxygen through the body. Normally, red blood cells are disc-shaped and flexible enough to move
         easily through the blood vessels. In sickle cell disease, red blood cells become crescent- or “sickle”-shaped 

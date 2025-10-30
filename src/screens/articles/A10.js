@@ -7,7 +7,7 @@ import Source from '../../components/Source';
 const A10 = () => {
   return (
     <>
-      <CustomText margin="7%" width="90%" fontFamily="Rubik-Regular" color="gray">
+      <CustomText fontSize={"small"} marginTop={30}marginBottom={30} width="90%" fontFamily="Rubik-Regular" color="gray">
       Sickle cell disease can affect sexual organs in ways that affect quality of life and reproduction. Menstrual cycles can sometimes exacerbate
        symptoms of sickle cell disease. You may need hormones or contraceptive options, but some options are safer than others. You should review 
        them carefully with your physician.

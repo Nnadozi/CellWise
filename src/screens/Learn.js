@@ -8,9 +8,9 @@ const Learn = () => {
 
   return (
     <PageBody >
-      <ScrollView style = {{width:"100%"}} contentContainerStyle = {{flexGrow:1, alignItems:"center"}}>
-        <View style = {{marginBottom:"130%",width:"100%"}}>
-          <ModulePreview source = {require("../assets/images/overview.png")} label = "Overview" style = {{marginTop:"5%"}} time = {"15 min"} bg = "bg1.png"
+      <ScrollView style={{ width: "100%" }} contentContainerStyle={{ alignItems: "center", paddingBottom: 50 }}>
+     
+          <ModulePreview source = {require("../assets/images/overview.png")} label = "Overview" style = {{marginTop:20}} time = {"15 min"} bg = "bg1.png"
            articleInfo = {OverviewInfo}/>
           <ModulePreview source = {require("../assets/images/symptoms.png")} label = "Symptoms"  time = {"15 min"}  bg = "bg1.png" 
           articleInfo = {SymptomsInfo}/>
@@ -20,7 +20,7 @@ const Learn = () => {
           articleInfo = {TreatmentInfo}/>
           <ModulePreview source = {require("../assets/images/living.png")} label = "Living With Sickle Cell"  time = {"15 min"}  bg = "bg1.png" 
           articleInfo = {LivingInfo}/>
-        </View>
+      
       </ScrollView>
     </PageBody>
   )

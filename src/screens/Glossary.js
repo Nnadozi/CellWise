@@ -12,7 +12,7 @@ const Glossary = () => {
   return (
     <PageBody white>
       <View style={{ flex: 1, width: '100%' }}>
-        <View style={{ justifyContent: 'center', alignItems: 'center',marginVertical: '3%' }}>
+        <View style={{ justifyContent: 'center', alignItems: 'center' }}>
           <TextInput
             value={search}
             onChangeText={text => setSearch(text)}
@@ -40,11 +40,12 @@ const styles = StyleSheet.create({
     fontFamily: 'Rubik-Regular',
     borderWidth: 1,
     borderColor: "lightgray",
-    paddingHorizontal: '3%',
+    paddingHorizontal: 20,
     color: "gray",
-    margin: '2%',
-    width:"85%",
-    padding:"3%"
+    margin: 20,
+    width:"95%",
+    padding:20,
+    borderRadius:10,
   }
 })
 

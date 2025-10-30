@@ -8,7 +8,7 @@ import * as Linking from "expo-linking"
 const A9 = () => {
   return (
     <>
-      <CustomText margin="7%" width="90%" fontFamily="Rubik-Regular" color="gray">
+      <CustomText fontSize={"small"} marginTop={30}marginBottom={30} width="90%" fontFamily="Rubik-Regular" color="gray">
         Follow these steps to help relieve symptoms and help you manage your condition at home.
         <Header newSection={true}>Receive routine follow-up care</Header>
         ● See your healthcare provider regularly. Most people who have sickle cell disease should see their provider every 3 to 12 months, depending on their age and type of sickle cell.

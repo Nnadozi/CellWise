@@ -6,7 +6,7 @@ import Source from '../../components/Source';
 export default A3 = () => {
   return (
     <>
-      <CustomText margin="7%" width="90%" fontFamily="Rubik-Regular" color="gray">
+      <CustomText fontSize={"small"} marginTop={30}marginBottom={30} width="90%" fontFamily="Rubik-Regular" color="gray">
         <Header>What is sickle cell trait?</Header>
         Sickle cell trait occurs when a person carries one copy of the sickle cell gene passed down from one parent 
         along with a normal hemoglobin gene from the other parent.

@@ -23,8 +23,8 @@ const TabNav = ({navigation}) => {
 
     return (
       <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-        <Icon name={icon.name} type={icon.type} color={color} size={23} />
-        <Text style={{ color, fontFamily: 'Rubik-Medium', fontSize: 10 }}>
+        <Icon style={{marginTop:10}} name={icon.name} type={icon.type} color={color} size={23} />
+        <Text style={{ color, fontFamily: 'Rubik-Medium', fontSize: 10, width: "100%", textAlign: "center",marginTop:4 }}>
           {routeName}
         </Text>
       </View>

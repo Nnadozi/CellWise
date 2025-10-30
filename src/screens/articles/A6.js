@@ -6,7 +6,7 @@ import Source from '../../components/Source';
 const A6 = () => {
   return (
     <>
-      <CustomText margin="7%" width="90%" fontFamily="Rubik-Regular" color="gray">
+      <CustomText fontSize={"small"} marginTop={30}marginBottom={30} width="90%" fontFamily="Rubik-Regular" color="gray">
         <Header>Blood test and genetic tests</Header>
         If you do not know whether you make sickle hemoglobin, you can find out by having your blood tested. You may also have 
         a genetic test. This way, you can learn whether you carry a genes  — or have the trait — for sickle hemoglobin that you

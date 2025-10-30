@@ -7,7 +7,7 @@ import Source from '../../components/Source';
 const A8 = () => {
   return (
     <>
-      <CustomText margin="7%" width="90%" fontFamily="Rubik-Regular" color="gray">
+      <CustomText fontSize={"small"} marginTop={30}marginBottom={30} width="90%" fontFamily="Rubik-Regular" color="gray">
         <Header>Transfusions</Header>
         Your healthcare provider may recommend a blood transfusion to treat and prevent certain sickle cell disease complications. Blood 
         transfusion is the process of transferring donated blood to your body. Red blood cell transfusions increase the number of red blood 

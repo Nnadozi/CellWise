@@ -6,7 +6,7 @@ import Source from '../../components/Source';
 const A4 = () => {
   return (
     <>
-      <CustomText margin="7%" width="90%" fontFamily="Rubik-Regular" color="gray">
+      <CustomText fontSize={"small"} marginTop={30}marginBottom={30} width="90%" fontFamily="Rubik-Regular" color="gray">
         Sickle cell disease is an  inherited  disease, which means you are born with it. However, most newborns do not have any problems 
         from the disease until they are about 5 or 6 months old.
         {'\n\n'}

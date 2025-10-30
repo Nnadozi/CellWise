@@ -12,7 +12,9 @@ const Word = (props) => {
         <CustomText color={"white"} fontFamily={"Rubik-SemiBold"} fontSize={"medium"}>
             {props.term}
         </CustomText>
-        <Icon  name='open' type="ionicon" color= {colors.wood} onPress={ () => setVisible(!visible)}/>
+        <View style = {[styles.iconCon, {borderColor:colors.tangerine}]}>
+            <Icon size={30}  name='open' type="ionicon" color= {colors.tangerine} onPress={ () => setVisible(!visible)}/>
+        </View>
     </View>
     <Modal  animationType='fade' transparent visible={visible} onRequestClose={() => { setVisible(!visible) }}>
         <View style = {styles.modalContainer}>
@@ -24,7 +26,7 @@ const Word = (props) => {
                         {props.term}
                     </CustomText>
                 </CustomText>
-                <View style = {{marginVertical:"2%"}}></View>
+                <View style = {{marginVertical:5}}></View>
                 <CustomText fontFamily={"Rubik-SemiBold"} fontSize={"medium"}>
                     Definition: ‎ 
                      <CustomText fontFamily={"Rubik-Regular"}>
@@ -42,14 +44,15 @@ export default Word
 
 const styles = StyleSheet.create({
     con:{
-        width:"87.5%",
-        borderRadius:5,
-        marginVertical:'1.5%',
+        width:"95%",
+        borderRadius:15,
+        marginVertical:7.5,
         backgroundColor:colors.tangerine,
         flexDirection:"row",
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding:"4%",
+        paddingVertical:25,
+        paddingLeft:25,
         elevation: 3,
         shadowColor: "#000",
         shadowOffset: {
@@ -58,6 +61,17 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.5,
+        height:70,
+    },
+    iconCon:{
+        height:70,
+        borderTopRightRadius:15,
+        borderBottomRightRadius:15,
+        backgroundColor:"white",
+        alignItems:"center",
+        justifyContent:"center",
+        paddingHorizontal:10,
+        borderWidth:2,
     },
     modalContainer:{
         flex:1,
@@ -70,9 +84,7 @@ const styles = StyleSheet.create({
         width:"90%",
         alignItems: 'flex-start',
         justifyContent:"center",
-        padding:"4%"
+        padding:15,
+        borderRadius:20,
     },
-    icon:{
-    
-    }
 })

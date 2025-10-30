@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { Button, View, ScrollView, ActivityIndicator, Alert, Text } from 'react-native';
+import { View, ScrollView, ActivityIndicator, Alert, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Icon } from '@rneui/base';
 import PageBody from '../util/constants/PageBody';
 import Log from '../components/Log';
 import * as Print from 'expo-print';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getSymptomLogHtml } from '../util/constants/symptomLogTemplate';
 import { useNavigation, useRoute, useFocusEffect } from '@react-navigation/native';
+import { colors } from '../util/constants/Colors';
+import CustomText from '../components/CustomText';
 
 const SYMPTOM_LOG_KEY = 'SYMPTOM_LOGS';
 
@@ -81,30 +84,76 @@ const SymptomTracker = () => {
 
   return (
     <PageBody white>
-      <View style={{ flexDirection: 'row', alignItems: 'flex-start', padding: '3%' }}>
-        {logs.length > 0 && <Button title="New Entry" onPress={openSymptomLog} />}
+      <View style={styles.container}>
+        {/* Action Buttons */}
         {logs.length > 0 && (
-          <View style={{ marginLeft: "1%" }}>
-            <Button title="Reset Tracker" onPress={confirmClearLogs} />
+          <View style={styles.actionButtons}>
+            <TouchableOpacity style={styles.primaryButton} onPress={openSymptomLog}>
+              <Icon name="add" type="ionicons" color={colors.white} size={20} />
+              <CustomText fontFamily="Rubik-Medium" color="white" style={styles.buttonText}>
+                New Entry
+              </CustomText>
+            </TouchableOpacity>
+            
+            <View style={styles.secondaryButtons}>
+              <TouchableOpacity style={styles.secondaryButton} onPress={confirmClearLogs}>
+                <Icon name="refresh" type="ionicons" color={colors.tangerine} size={16} />
+                <CustomText fontFamily="Rubik-Medium" color="tangerine" fontSize="small">
+                  Reset
+                </CustomText>
+              </TouchableOpacity>
+              
+              <TouchableOpacity 
+                style={[styles.secondaryButton, logs.length < 3 && styles.disabledButton]} 
+                onPress={print}
+                disabled={logs.length < 3}
+              >
+                <Icon name="print" type="ionicons" color={logs.length < 3 ? colors.lightGray : colors.lochmara} size={16} />
+                <CustomText 
+                  fontFamily="Rubik-Medium" 
+                  color={logs.length <3 ? colors.lightGray : colors.lochmara} 
+                  fontSize="small"
+                >
+                  Print
+                </CustomText>
+              </TouchableOpacity>
+            </View>
           </View>
         )}
-        {logs.length > 0 && (
-        <View style={{ marginLeft: "1%" }}>
-            <Button disabled = {logs.length < 3} title="Print (3+ Logs)" onPress={print} />
-        </View>
-        )}
-      </View>
-      <View style={{ flex: 1, width: '100%' }}>
-        <View style={{ justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+
+        {/* Content Area */}
+        <View style={styles.content}>
           {loading ? (
-            <ActivityIndicator style={{ position: 'absolute', top: '35%' }} size="small" color="gray" />
+            <View style={styles.centerContent}>
+              <ActivityIndicator size="large" color={colors.lochmara} />
+              <CustomText fontFamily="Rubik-Regular" color="gray" style={styles.loadingText}>
+                Loading entries...
+              </CustomText>
+            </View>
           ) : logs.length === 0 ? (
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-              <Text style={{ opacity: 0.2, margin: '2%' }}>No entries available.</Text>
-              <Button title="New Entry" onPress={openSymptomLog} />
+            <View style={styles.emptyState}>
+              <View style={styles.emptyIcon}>
+                <Icon name="medical" type="ionicons" color={colors.lightGray} size={60} />
+              </View>
+              <CustomText textAlign={"center"} fontFamily="Rubik-Medium" fontSize="medium" color="gray" style={styles.emptyTitle}>
+                No entries yet
+              </CustomText>
+              <CustomText textAlign={"center"} fontFamily="Rubik-Regular" fontSize="small" color="lightGray" style={styles.emptySubtitle}>
+                Start tracking your symptoms by creating your first entry
+              </CustomText>
+              <TouchableOpacity style={styles.primaryButton} onPress={openSymptomLog}>
+                <Icon name="add" type="ionicons" color={colors.white} size={20} />
+                <CustomText fontFamily="Rubik-Medium" color="white" style={styles.buttonText}>
+                  Create First Entry
+                </CustomText>
+              </TouchableOpacity>
             </View>
           ) : (
-            <ScrollView style={{ width: '100%' }} contentContainerStyle={{ flexGrow: 1, alignItems: 'center' }}>
+            <ScrollView 
+              style={styles.scrollView} 
+              contentContainerStyle={styles.scrollContent}
+              showsVerticalScrollIndicator={false}
+            >
               {logs.map((obj, index) => (
                 <Log 
                   key={index} 
@@ -123,7 +172,7 @@ const SymptomTracker = () => {
                   }} 
                 />
               ))}
-              <View style={{ paddingBottom: '20%' }} />
+              <View style={{ paddingBottom: 100 }} />
             </ScrollView>
           )}
         </View>
@@ -131,5 +180,99 @@ const SymptomTracker = () => {
     </PageBody>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingHorizontal: 20
+  },
+  header: {
+    paddingTop: 20,
+    paddingBottom: 30,
+    alignItems: 'center',
+  },
+  title: {
+    marginBottom: 8,
+  },
+  subtitle: {
+    textAlign: 'center',
+  },
+  actionButtons: {
+    marginBottom: 30,
+  },
+  primaryButton: {
+    backgroundColor: colors.lochmara,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding:15,
+    borderRadius: 12,
+    marginBottom: 16,
+    shadowColor: colors.lochmara,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 8,
+    marginTop:10
+  },
+  buttonText: {
+    marginLeft: 8,
+  },
+  secondaryButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  secondaryButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: colors.lightGray,
+    backgroundColor: colors.white,
+    flex: 0.48,
+  },
+  disabledButton: {
+    opacity: 0.5,
+  },
+  content: {
+    flex: 1,
+  },
+  centerContent: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  loadingText: {
+    marginTop: 16,
+  },
+  emptyState: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 40,
+  },
+  emptyIcon: {
+    marginBottom: 24,
+    opacity: 0.5
+  },
+  emptyTitle: {
+    marginBottom: 12,
+    textAlign: 'center',
+  },
+  emptySubtitle: {
+    textAlign: 'center',
+    marginBottom: 32,
+    lineHeight: 20
+  },
+  scrollView: {
+    flex: 1,
+  },
+  scrollContent: {
+    paddingBottom: 20,
+  },
+});
 
 export default SymptomTracker;

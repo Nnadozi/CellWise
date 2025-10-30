@@ -1,10 +1,10 @@
-Frontend: 
-- UI Improvements
-- Word categories
-- Filter option
-- Journal system rework (numerical info, graphs)
-- Settings (dark mode, language)
-- Add athlete section
-- Medication reminder
-- Language support
-- New store art + icon
+2.0.0
+- Better store art
+- Better app icon
+- Better app preview banner
+- App store rebranding
+- complete rework 
+- settings (thene language, etc)
+- medication reminder
+- bug fixes + package updates
+- ai helper?

@@ -6,7 +6,7 @@ import { View } from 'react-native';
 export default A2 = () => {
   return (
     <>
-      <CustomText margin="7%" width="90%" fontFamily="Rubik-Regular" color="gray">
+      <CustomText fontSize={"small"}  marginTop={30}marginBottom={30} width="90%" fontFamily="Rubik-Regular" color="gray">
         Sickle cell disease is inherited, meaning that it runs in families. People who have sickle cell anemia inherit two 
         faulty hemoglobin genes — hemoglobin S — one from each parent. Sickle cell disease can also occur when a child inherits 
         one hemoglobin S gene from one parent and another faulty hemoglobin gene, such as beta (β) thalassemia, hemoglobin C, hemoglobin

@@ -69,7 +69,7 @@ const SymptomLog = () => {
         <Button title="Cancel" onPress={handleCancel} />
         <Button title="Create" onPress={handleLog} disabled={!desc.trim()} />
       </View>
-      <Divider style = {{width:"100%", marginVertical:"6%" }} />
+      <Divider style = {{width:"95%", marginVertical:20 }} />
       <View style={styles.tipsContainer}>
         <CustomText fontFamily={"Rubik-SemiBold"} color = "gray" >
           Tips for Describing Sickle Cell Symptoms:
@@ -101,23 +101,23 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
     alignItems: "center",
-    padding:"3%"
+    padding:20
   },
   buttonContainer: {
     flexDirection: 'row',
     alignSelf: "flex-start",
     gap: 10,
-    marginLeft: "3%",
+    marginLeft: 20,
   },
   input:{
     fontFamily: 'Rubik-Regular',
     borderWidth: 1,
     borderColor:"lightgray",
     color: "gray",
-    padding: '3%',
-    margin: '5%',
+    padding: 20,
     width:"95%",
     height:"20%",
+    borderRadius:10,
   },
   tipsContainer:{
     alignSelf:"flex-start",

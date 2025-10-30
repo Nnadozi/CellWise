@@ -6,7 +6,7 @@ import Source from '../../components/Source';
 const A5 = () => {
   return (
     <>
-      <CustomText margin="7%" width="90%" fontFamily="Rubik-Regular" color="gray">
+      <CustomText fontSize={"small"} marginTop={30}marginBottom={30} width="90%" fontFamily="Rubik-Regular" color="gray">
         The sickled cells that give the disease its name can lead to pain throughout the body and serious damage to organs, such as the heart and kidneys. 
         It is important to be aware of the possible complications of sickle cell disease and know when to seek emergency care.
         {'\n\n'}

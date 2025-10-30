@@ -17,12 +17,12 @@ const Settings = ({navigation}) => {
           View
         </CustomText>
       </View>
-      <Divider  style = {{width:"90%", marginVertical:"3%" }}/>
+      <Divider  style = {{width:"95%", marginVertical:15 }}/>
       <View style = {{width:"90%", flexDirection:"row", justifyContent:"space-between",alignItems:"center"}}>
         <Text style = {styles.header}>Disclaimer</Text>
         <CustomText onPress={DisclaimerAlert} color={"lochmara"}>View</CustomText>
       </View>
-      <View style = {{justifyContent:"flex-start",alignSelf:"flex-start",margin:"4%"}}>
+      <View style = {{justifyContent:"flex-start",alignSelf:"flex-start",marginTop:10,marginLeft:25}}>
         <Button title='Back' onPress={() => navigation.goBack()} />
       </View>
     </View>
@@ -36,10 +36,10 @@ const styles = StyleSheet.create({
     flex:1,
     alignItems:"center",
     backgroundColor:"white",
-    paddingTop:"7%"
+    paddingTop:30
   },
   container:{
-    width:"90%"
+    width:"95%"
   },
   header:{
     fontWeight:"bold",
@@ -50,32 +50,3 @@ const styles = StyleSheet.create({
 
 
 
-/**\
- * 
- * <View style = {styles.container}>
-        <Text style = {styles.header}>Theme</Text>
-        <Picker 
-          selectedValue={selectedTheme}
-          onValueChange={(itemValue, itemIndex) =>
-            setSelectedTheme(itemValue)
-          }>
-          <Picker.Item label="Light" value="light" />
-          <Picker.Item label="Dark" value="dark" />
-          <Picker.Item label="System" value="system" />
-        </Picker>
-      </View>
-      <Divider  style = {{width:"90%", marginVertical:"5%" }}/>
-      <View style = {styles.container}>
-      <Text style = {styles.header}>Language</Text>
-        <Picker 
-          selectedValue={selectedLanguage}
-          onValueChange={(itemValue, itemIndex) =>
-            selectedLanguage(itemValue)
-          }>
-          <Picker.Item label="English" value="en" />
-          <Picker.Item label="Spanish" value="es" />
-          <Picker.Item label="French" value="fr" />
-        </Picker>
-      </View>
-      <Divider  style = {{width:"90%", marginVertical:"3%" }}/>
- */

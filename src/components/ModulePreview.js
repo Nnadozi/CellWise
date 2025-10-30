@@ -17,7 +17,7 @@ const ModulePreview = (props) => {
     >
       <ImageBackground source={props.source} style={styles.imageBackground} />
       <CustomText 
-          margin={"3%"} 
+          margin={20} 
           fontFamily={"Rubik-Bold"} 
           color={"white"} 
           fontSize={"large"}
@@ -32,10 +32,10 @@ export default ModulePreview;
 
 const styles = StyleSheet.create({
   con: {
-    width: "90%",
-    height: "25%", 
-    borderRadius: 10,
-    marginVertical: "2%",
+    width: "95%",
+    height: 200, 
+    borderRadius: 20,
+    marginVertical: 10,
     alignSelf: "center",
     justifyContent: "flex-end",
     overflow: "hidden",

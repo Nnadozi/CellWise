@@ -6,8 +6,8 @@ import Source from '../../components/Source';
 const A7 = () => {
   return (
     <>
-      <CustomText margin="7%" width="90%" fontFamily="Rubik-Regular" color="gray">
-        Four medicines have been approved to treat sickle cell disease. In 1998, hydroxyurea was approved. Later, voxelotor, 
+        <CustomText fontSize={"small"} marginTop={30}marginBottom={30} width="90%" fontFamily="Rubik-Regular" color="gray">
+          Four medicines have been approved to treat sickle cell disease. In 1998, hydroxyurea was approved. Later, voxelotor, 
         L-glutamine, and crizanlizumab-tmca were approved. They treat different aspects of the disease.
         <Header newSection={true}>Medicine to prevent sickling and reduce multiple complications</Header>
         Hydroxyurea is an oral medicine that has been shown to reduce sickling and reduce or prevent several complications of 
